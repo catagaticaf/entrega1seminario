@@ -25,7 +25,8 @@ answers = [
 # Índice de la respuesta correcta para cada pregunta, el el mismo orden que las preguntas
 correct_answers_index = [1, 2, 0, 3, 1]
 # combino las 3 listas en una sola lista:
-questions_to_ask = random.choices(list(zip(questions, answers, correct_answers_index)), k=3)
+# cambio random.choices() por random.sample(), que me permite elegir elementos de una lista si repetirlos
+questions_to_ask = random.sample(list(zip(questions, answers, correct_answers_index)), k=3)
 puntaje = 0 #para llevar el registro del puntaje
 # El usuario deberá contestar 3 preguntas
 for question, answer_options, correct_answer_index in questions_to_ask:
