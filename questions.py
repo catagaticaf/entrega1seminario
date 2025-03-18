@@ -40,7 +40,7 @@ for _ in range(3):
             #le resto 1 para respetar el inicio del indice en 0
             user_answer = int(user_answer) - 1
             #checkeo que el numero ingresado este dentro del rango permitido
-            if user_answer <= 0 or user_answer < len(answers[question_index]):
+            if 0 <= user_answer < len(answers[question_index]):
                 # Se verifica si la respuesta es correcta
                 if user_answer == correct_answers_index[question_index]:
                     print("¡Correcto!")
